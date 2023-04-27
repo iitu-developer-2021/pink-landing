@@ -9,7 +9,7 @@ import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
-  return app.gulp.src(app.path.src.scss, { sourcemap: true })
+  return app.gulp.src(app.path.src.scss, { sourcemaps: true })
     .pipe(app.plugins.plumber(app.plugins.notify.onError({
       title: "Scss",
       message: "Error: <%= error.message %>"
