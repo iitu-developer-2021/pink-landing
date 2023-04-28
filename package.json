@@ -5,8 +5,10 @@
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
-    "start": "node gulpfile.js",
-    "style-lint": "npx stylelint \"**/*.scss\""
+    "dev": "gulp",
+    "style-lint": "npx stylelint \"**/*.scss\"",
+    "svgSprite": "gulp svgSprite",
+    "fonts": "gulp fonts"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +22,7 @@
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
+    "gulp-svg-sprite": "^2.0.3",
     "gulp-ttf2woff2": "^4.0.1",
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",

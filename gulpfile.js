@@ -16,6 +16,7 @@ import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js"
 import { image } from "./gulp/tasks/image.js";
 import { otfToTtf, fontStyle, ttfToWoff } from "./gulp/tasks/fonts.js";
+import { svgSprite } from "./gulp/tasks/svgSprite.js";
 
 const watcher = () => {
   gulp.watch(path.watch.files, copy);
@@ -24,6 +25,9 @@ const watcher = () => {
   gulp.watch(path.watch.scss, js);
   gulp.watch(path.watch.scss, image);
 }
+
+export { svgSprite }
+export { fonts }
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle)
 
