@@ -1,21 +1,5 @@
+@import "fonts";
 
 body{
-
-  span{
-    background-image: url("img/test.jpg");
-  }
-}
-
-
-@media (min-width: 778px) {
-  body{
-    background: black
-  }
-}
-
-
-@media (min-width: 778px) {
-  span{
-    background: black
-  }
+  font-family: "DancingScript", sans-serif;
 }
