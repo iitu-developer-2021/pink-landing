@@ -3,6 +3,8 @@ import { path } from "./gulp/config/path.js";
 import { plugins } from "./gulp/config/plugins.js";
 
 global.app = {
+  isBuild: process.argv.includes('--build'),
+  isDev: !process.argv.includes('--build'),
   path,
   gulp,
   plugins
@@ -26,14 +28,17 @@ const watcher = () => {
   gulp.watch(path.watch.scss, image);
 }
 
-export { svgSprite }
-export { fonts }
-
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle)
 
 const mainTasks = gulp.series(fonts, gulp.parallel(svgSprite, html, copy, scss, js, image));
 
 const dev =  gulp.series(reset, mainTasks, gulp.parallel(watcher, server))
+const build = gulp.series(reset, mainTasks)
+
+export { build }
+export { dev }
+export { svgSprite }
+export { fonts }
 
 gulp.task('default', dev)
 
