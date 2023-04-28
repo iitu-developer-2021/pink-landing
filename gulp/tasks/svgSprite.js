@@ -9,8 +9,8 @@ export const svgSprite = () => {
     .pipe(svgSpriteLib({
       mode: {
         stack: {
-          sprite: '../icons/icons.svg',
-          example: true
+          sprite: '../icons.svg',
+          example: false
         }
       }
     }))

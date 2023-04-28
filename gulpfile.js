@@ -31,7 +31,7 @@ export { fonts }
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle)
 
-const mainTasks = gulp.series(fonts, gulp.parallel(html, copy, scss, js, image));
+const mainTasks = gulp.series(fonts, gulp.parallel(svgSprite, html, copy, scss, js, image));
 
 const dev =  gulp.series(reset, mainTasks, gulp.parallel(watcher, server))
 
