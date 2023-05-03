@@ -1,0 +1,31 @@
+
+.container{
+  max-width: rem($maxWidthContainer);
+  padding:0 rem($containerPadding);
+  margin: 0 auto;
+}
+
+.visually-hidden{
+  display: none;
+}
+
+
+.button{
+  border: 3px solid #FFFFFF;
+  border-radius: 29px;
+  padding: rem(16) rem(38);
+  font-weight: 700;
+  font-size: rem(18);
+  line-height: math.div(18, 18);
+  text-align: center;
+  color: #FFFFFF;
+  width: 100%;
+  transition: .3s all ease 0s;
+
+  @media(any-hover: hover){
+      &:hover{
+        background: #fff;
+        color: #000;
+      }
+  }
+}

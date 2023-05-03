@@ -1,4 +1,34 @@
-<header>
-  I am header
-  <img src="@img/test.jpeg" alt="">
+<header class="header">
+  <div class="header__container container">
+    <div class="header__wrapper">
+      <div class="header__top">
+        <a href="#" class="header__logo-link">
+          <picture>
+            <source srcset="@img/icons.svg#pink_desktop" media="(min-width: 991.98px)" />
+            <source srcset="@img/icons.svg#pink_tablet" media="(min-width: 660px)" />
+            <img src="@img/icons.svg#pink_mobile" alt="Logo" class="header__logo"/>
+          </picture>
+        </a>
+        <button class="header__toggle" data-menu-toggler=".header__nav">
+          <span class="visually-hidden">Кнопка для открытия/закрытия навигации</span>
+        </button>
+      </div>
+      <nav class="header__nav header-nav">
+        <ul class="header-nav__list">
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">главная</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">фотографии</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">конкурс</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">html academy</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>

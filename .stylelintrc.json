@@ -3,17 +3,7 @@
       "scss/at-extend-no-missing-placeholder": true,
       "selector-class-pattern": null,
       "selector-id-pattern": null,
-      "declaration-empty-line-before": "never",
-      "rule-empty-line-before": [
-        "always",
-        {
-          "except": [
-            "first-nested"
-          ],
-          "ignore": [
-            "after-comment"
-          ]
-        }
-      ]
+    "block-no-empty": null,
+      "declaration-empty-line-before": "never"
   }
 }

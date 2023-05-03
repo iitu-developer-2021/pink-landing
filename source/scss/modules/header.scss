@@ -1,0 +1,244 @@
+.header {
+  // .header__container
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  &__container {
+
+  }
+
+  // .hedaer__top
+  &__top{
+    height: rem(66);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(15);
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      opacity: .3;
+    }
+
+    @media (min-width: $mobile) {
+      height: rem(110);
+    }
+  }
+
+  // .header__wrapper
+  &__wrapper {
+
+    @media (min-width: $tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: rem(15)
+    }
+  }
+
+  // .header__link
+  &__logo-link{
+
+  }
+
+  // .header__logo
+  &__logo {
+    width: rem(77);
+    height: rem(26);
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: $mobile) {
+      width: rem(145);
+      height: rem(40);
+    }
+
+    @media (min-width: $tablet) {
+      width: rem(147);
+    }
+  }
+
+  // .header__nav
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: rem(66);
+    transform: translateX(100%);
+    transition: .3s transform ease 0s;
+
+    &--active{
+      transform: translateX(0);
+    }
+
+    @media (min-width: $mobile) {
+      padding-top: rem(110);
+    }
+
+    @media (min-width: $tablet) {
+      position: static;
+      transform: initial;
+      padding-top: 0;
+    }
+  }
+
+  // .header__toggle
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(12) 0;
+    position: relative;
+    width: rem(50);
+    transition: .3s all ease 0s;
+    z-index: 2;
+
+    @media (min-width: $tablet) {
+      display: none;
+    }
+
+    span{
+      font-size: 0;
+      width: 100%;
+      height: rem(4);
+      border-radius: rem(5);
+      background: #fff;
+      display: inline-block;
+      transition: .3s all ease 0s;
+    }
+
+    &::before,
+    &::after{
+      content: "";
+      width: 100%;
+      height: rem(4);
+      border-radius: rem(5);
+      background: #fff;
+      position: absolute;
+      left: 0;
+      transition: .3s all ease 0s;
+    }
+
+    &::before{
+      top: 0;
+    }
+
+    &::after{
+      bottom: 0;
+    }
+
+    &--active{
+      padding: rem(18) 0;
+      width: rem(35);
+
+      span{
+        display: none;
+      }
+
+      &::before{
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        border-radius: initial;
+      }
+
+      &::after{
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        border-radius: initial;
+      }
+    }
+  }
+}
+
+.header-nav {
+  background: #283645;
+  box-shadow: 0 rem(1) 0 #000000;
+
+  @media (min-width: $tablet) {
+    background: transparent;
+    box-shadow: initial;
+  }
+
+  // .header-nav__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: rem(-1);
+      left: 0;
+      width: 100%;
+      height: rem(1);
+      background: #000000;
+
+      @media (min-width: $tablet) {
+        display: none;
+      }
+    }
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: flex-end;
+      column-gap: rem(65);
+    }
+  }
+
+  // .header-nav__item
+  &__item {
+    border-top: rem(1) inset rgba(255, 255, 255, 0.15);
+
+    &:not(:last-child){
+      border-bottom: rem(1) solid #000000;
+
+      @media (min-width: $tablet) {
+        border-bottom: initial;
+      }
+    }
+
+    @media (min-width: $tablet) {
+      border-top: initial;
+    }
+  }
+
+  // .header-nav__link
+  &__link {
+    display: block;
+    padding: rem(25);
+    text-align: center;
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: math.div(32, 18);
+    text-transform: uppercase;
+    color: #fff;
+    transition: .3s all ease 0s;
+
+    @media(any-hover: hover){
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    @media (min-width: $tablet) {
+      font-weight: 400;
+      font-size: rem(18);
+      line-height: math.div(18, 18);
+      color: #FFFFFF;
+      text-transform: capitalize;
+      padding: 0;
+    }
+  }
+}

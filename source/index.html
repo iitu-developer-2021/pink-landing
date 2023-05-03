@@ -11,7 +11,39 @@
 <body>
     @@include('./html/header.html')
     <main>
+      <h1 class="visually-hidden">Приложение PINK</h1>
 
+      <section class="introduction">
+        <h2 class="visually-hidden">Обзор приложения</h2>
+
+       <div class="introduction__body">
+         <div class="introduction__content">
+           <div class="introduction__main main-introduction">
+             <div class="main-introduction__container container">
+               <p class="main-introduction__text">Взгляните на жизнь иначе!</p>
+             </div>
+           </div>
+
+           <div class="introduction__banner introduction-banner">
+             <div class="introduction-banner__container container">
+               <button class="introduction-banner__button button">Скачать приложение</button>
+               <div class="introduction-banner__socials">
+                 <svg class="introduction-banner__social">
+                   <use href="@img/icons.svg#apple"></use>
+                 </svg>
+                 <svg class="introduction-banner__social">
+                   <use href="@img/icons.svg#android"></use>
+                 </svg>
+                 <svg class="introduction-banner__social">
+                   <use href="@img/icons.svg#microsoft"></use>
+                 </svg>
+               </div>
+               <p class="introduction-banner__text">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+             </div>
+           </div>
+         </div>
+       </div>
+      </section>
     </main>
     @@include('./html/footer.html')
     <script src="js/app.min.js"></script>
