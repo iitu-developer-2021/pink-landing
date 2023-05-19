@@ -20,13 +20,16 @@
       bottom: rem(70);
       width: 100%;
     }
+
+    @media (min-width: $tablet) {
+      bottom: rem(150);
+    }
   }
 
   // .introduction__content
   &__content{
 
     @media (min-width: $tablet) {
-      width: rem($maxWidthContainer);
       margin: 0 auto;
     }
   }
@@ -81,6 +84,11 @@
       line-height: 120%;
       text-align: center;
       padding: 0 rem(80);
+    }
+
+    @media (min-width: $tablet) {
+      font-size: rem(50);
+      padding: 0 rem(40);
     }
   }
 }

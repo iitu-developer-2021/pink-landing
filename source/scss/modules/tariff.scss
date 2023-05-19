@@ -1,0 +1,145 @@
+.tariff{
+  position: relative;
+  background: #F2F2F2;
+  $self: &;
+
+  &::after,
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: rem(45);
+  }
+
+  &::before{
+    background: #fff;
+  }
+
+  &::after{
+    background: #F2F2F2;
+    clip-path: polygon(0 rem(40), 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  &__container{
+    padding-top: rem(90);
+    padding-bottom: rem(95);
+    overflow: hidden;
+  }
+
+  &__slider{
+    min-width: 0;
+  }
+
+  &__list{
+    display: flex;
+    background: #fff;
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $mobile) {
+      flex:1;
+    }
+
+    &:nth-child(2) #{$self}__header{
+      border-top-left-radius: rem(3);
+    }
+
+    &:last-child #{$self}__header{
+      border-top-right-radius: rem(3);
+    }
+
+    &:not(:last-child) #{$self}__header{
+      border-right: rem(2) solid #F2F2F2;
+    }
+
+    &:first-child #{$self}__point{
+      border-left: 2px solid #E5E5E5;
+
+      &:nth-child(1){
+        border-top: 2px solid #E5E5E5;
+      }
+    }
+
+    &--first #{$self}__header{
+      background: #F2F2F2;
+      flex: 1;
+    }
+
+    &--first{
+      display: none;
+
+      @media (min-width: $mobile) {
+        display: flex;
+      }
+    }
+  }
+
+  &__header{
+    background: #283645;
+    padding: rem(19) rem(30);
+  }
+
+  &__title{
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: math.div(30, 16);
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  &__price{
+    font-weight: 300;
+    font-size: rem(18);
+    line-height: math.div(30, 18);
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  &__point{
+    border-right: 2px solid #E5E5E5;
+    border-bottom: 2px solid #E5E5E5;
+    display: flex;
+    align-items: center;
+    min-height: rem(47);
+    padding: 0 rem(15);
+    background: #fff;
+    justify-content: space-between;
+
+    @media (min-width: $mobile) {
+      justify-content: center;
+    }
+
+    span{
+      display: block;
+      font-weight: 400;
+      font-size: rem(14);
+      line-height: math.div(30, 14);
+      align-items: center;
+      text-transform: uppercase;
+      color: #283645;
+
+      @media (min-width: $mobile) {
+        display: none;
+      }
+    }
+
+    img{
+      width: rem(45);
+      height: rem(45);
+    }
+  }
+
+  &__pagination{
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+}

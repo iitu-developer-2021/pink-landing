@@ -1,0 +1,249 @@
+.footer {
+  // .footer__container
+  &__container {
+    background: #fff;
+  }
+
+  // .footer__title
+  &__title {
+    font-weight: 300;
+    font-size: rem(26);
+    line-height: 120%;
+    text-align: center;
+    color: #283645;
+    margin-bottom: rem(45);
+    margin-top: rem(45);
+    display: block;
+    letter-spacing: 2px;
+
+    @media (min-width: $mobile) {
+      font-size: rem(40);
+      line-height: math.div(54, 40);
+    }
+
+    @media (min-width: $tablet) {
+      font-size: rem(50);
+      line-height: math.div(68, 50);
+    }
+  }
+
+  // .footer__addresses
+  &__addresses {
+    padding-bottom: rem(20);
+
+    @media (min-width: $mobile) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      column-gap: rem(10);
+      row-gap: rem(30);
+    }
+
+    @media (min-width: $tablet) {
+      padding-bottom: rem(40);
+    }
+  }
+
+  // .footer__address-item
+  &__address-item {
+
+    &:not(:last-child){
+        margin-bottom: rem(30)
+    }
+
+    @media (min-width: $mobile) {
+      flex: 0 0  33.333%;
+    }
+
+    @media (min-width: $tablet) {
+      flex: 1 1 auto;
+
+      &:nth-child(1){
+        order: 2;
+      }
+    }
+  }
+
+  // .footer__subtitle
+  &__subtitle {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: math.div(24, 18);
+    text-align: center;
+    color: #283645;
+    margin-bottom: rem(13);
+  }
+
+  // .footer__contact
+  &__contact {
+    font-weight: 300;
+    font-size: rem(24);
+    line-height: math.div(33, 24);
+    text-align: center;
+    color: #D22856;
+    display: block;
+
+   @media(any-hover: hover){
+       &:hover{
+           text-decoration: underline;
+       }
+   }
+
+    &--address{
+      @media(any-hover: hover){
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__yandex-map{
+    width: 100%;
+    height: rem(200);
+    position: relative;
+
+    &::before,
+    &::after{
+      content: "";
+      background: #fff;
+      height: rem(30);
+      position: absolute;
+      top: 0;
+      width: 50%;
+      z-index: 2;
+    }
+
+    &::before{
+      clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 100%);
+      right: 0;
+    }
+
+    &::after{
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%);
+      left: 0;
+    }
+
+
+    @media (min-width: $mobile) {
+      height: rem(375);
+
+      &::before,
+      &::after{
+        height: rem(60);
+      }
+    }
+
+    @media (min-width: $tablet) {
+      height: rem(500);
+
+      &::before,
+      &::after{
+        height: rem(100);
+      }
+    }
+  }
+}
+
+.bottom-footer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(35);
+  padding: rem(40) 0;
+
+  @media (min-width: $mobile) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  // .bottom-footer__logo
+  &__logo {
+    display: flex;
+    justify-content: center;
+    transition: .3s all;
+
+    @media(any-hover: hover){
+        &:hover{
+          transform: scale(1.1);
+        }
+    }
+
+    svg{
+      width: rem(145);
+      height: rem(40);
+    }
+  }
+
+  // .bottom-footer__socials
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: rem(14);
+  }
+
+  // .bottom-footer__social
+  &__social {
+    width: rem(40);
+    height: rem(40);
+    padding: rem(10);
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s all;
+
+   @media(any-hover: hover){
+       &:hover{
+         transform: scale(1.1);
+       }
+   }
+
+    @media (min-width: $mobile ) {
+      width: rem(48);
+      height: rem(48);
+    }
+    &::after{
+      content: "";
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      top:0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 50%;
+      border: 3px solid #283645;
+      display: block;
+      opacity: .1;
+    }
+
+    svg{
+      width: rem(16);
+      height: rem(18);
+    }
+  }
+
+  &__copy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(15);
+
+    span{
+      font-weight: 400;
+      font-size: rem(14);
+      line-height: math.div(18, 14);
+      color: #283645;
+
+      @media (min-width: $tablet) {
+        font-size: rem(18);
+      }
+    }
+
+    svg{
+      width: rem(27);
+      height: rem(34);
+    }
+  }
+}

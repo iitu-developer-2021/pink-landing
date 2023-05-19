@@ -22,8 +22,12 @@ $mobile: em(660.98);
 $mobileSmall: em(479.98);
 
 @import "base/null";
+@import "base/swiper";
 
 @import "modules/common";
 @import "modules/header";
 @import "modules/footer";
 @import "modules/introduction";
+@import "modules/advantages";
+@import "modules/review";
+@import "modules/tariff";

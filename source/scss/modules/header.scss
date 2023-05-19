@@ -4,7 +4,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
+  $self: &;
+
+  &--scrolled{
+
+    #{$self}__top::before{
+      background: #283645;
+      opacity: 1;
+    }
+  }
 
   &__container {
 
@@ -27,6 +36,7 @@
       height: 100%;
       background: #000000;
       opacity: .3;
+      transition: .3s all;
     }
 
     @media (min-width: $mobile) {

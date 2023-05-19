@@ -47,11 +47,7 @@ export const scss = () =>
         )
         .pipe(app.plugins.if(app.isBuild, app.gulp.dest(app.path.build.scss)))
         .pipe(app.plugins.if(app.isBuild, cleanCss()))
-        .pipe(
-            rename({
-                extname: '.min.css'
-            })
-        )
+        .pipe(rename({ suffix: '.min' }))
 
         .pipe(app.gulp.dest(app.path.build.scss))
         .pipe(app.plugins.browserSync.stream());

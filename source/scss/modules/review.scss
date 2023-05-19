@@ -1,0 +1,191 @@
+.review {
+  // .review__container
+  padding: rem(30) 0;
+
+  &__container {
+  }
+
+  // .review__slider
+  &__slider {
+    position: relative;
+
+    @media (min-width: $tablet) {
+      margin-top: rem(70);
+    }
+  }
+
+  // .review__swiper
+  &__swiper {
+    min-width: 0;
+  }
+
+  // .review__slide
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $tablet) {
+      padding: rem(120) rem(104) 0;
+      position: relative;
+
+      &::after{
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        background: url('../img/review/quotes.png') center top / contain no-repeat;
+        width: rem(80);
+        height: rem(80);
+      }
+    }
+  }
+
+  // .review__title
+  &__title {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: math.div(30, 18);
+    text-align: center;
+    color: #000000;
+    margin-bottom: rem(10);
+
+    @media (min-width: $mobileSmall) {
+      order: 2;
+      margin-top: rem(25);
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $tablet) {
+      font-size: rem(24);
+    }
+  }
+
+  &__text{
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: math.div(30, 14);
+    text-align: center;
+    color: #283645;
+    padding: 0 rem(35);
+
+    @media (min-width: $mobile) {
+      font-size: rem(18);
+    }
+  }
+
+  &__responsibility{
+    display: none;
+
+    @media (min-width: $mobileSmall) {
+      display: block;
+      font-weight: 400;
+      font-size: rem(14);
+      line-height: math.div(30, 14);
+      text-align: center;
+      color: #283645;
+      order: 3;
+    }
+
+    @media (min-width: $mobile) {
+      font-size: rem(18);
+    }
+  }
+
+  &__button-next,
+  &__button-prev{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: #fff;
+    width: rem(22);
+    height: rem(41);
+    display: none;
+
+    @media (min-width: $tablet) {
+      display: block;
+    }
+
+    @media(any-hover: hover){
+      &:hover{
+
+        &::after,
+        &::before{
+          opacity: 1;
+        }
+      }
+    }
+
+    &::after,
+    &::before{
+      content: "";
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      bottom: 0;
+      width: rem(30);
+      height: rem(2);
+      display: block;
+      background: #283645;
+      opacity: 0.3;
+      transition: .2s all;
+    }
+
+    &.swiper-button-disabled{
+      pointer-events: none;
+
+      &::before,
+      &::after{
+        opacity: .3;
+      }
+    }
+  }
+
+  &__button-next{
+    right: 0;
+
+    &::before,
+    &::after{
+      right: 0;
+      transform-origin: right;
+    }
+
+    &::after{
+      transform: rotate(45deg) translateY(1px);
+    }
+
+    &::before{
+      transform: rotate(-45deg) translateX(-2px) translateY(-1px);
+    }
+  }
+
+  &__button-prev{
+    left: 0;
+
+    &::before,
+    &::after{
+      left: 0;
+      transform-origin: left;
+    }
+
+    &::after{
+      transform: rotate(45deg) translateY(-1px);
+    }
+
+    &::before{
+      transform: rotate(-45deg) translateX(2px) translateY(1px);
+    }
+  }
+}
+
+.container {
+}
+
+.swiper-container {
+}
+
+.swiper-wrapper {
+}
+
+.swiper-slide {
+}

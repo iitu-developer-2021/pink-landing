@@ -1,4 +1,6 @@
 import * as functions from './modules/functions.js';
+import './modules/swiper.js';
+import './modules/map.js';
 
 functions.isWebp();
 
@@ -17,3 +19,17 @@ function handleMenuToggleClick() {
 }
 
 menuToggler.addEventListener('click', handleMenuToggleClick);
+
+const header = document.querySelector('.header');
+
+const checkScrollPosition = () => {
+    const { pageYOffset } = window;
+
+    if (pageYOffset > 50) {
+        header.classList.add('header--scrolled');
+    } else {
+        header.classList.remove('header--scrolled');
+    }
+};
+
+document.addEventListener('scroll', checkScrollPosition);
