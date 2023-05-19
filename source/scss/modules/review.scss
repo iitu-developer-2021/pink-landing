@@ -2,9 +2,6 @@
   // .review__container
   padding: rem(30) 0;
 
-  &__container {
-  }
-
   // .review__slider
   &__slider {
     position: relative;
@@ -176,16 +173,4 @@
       transform: rotate(-45deg) translateX(2px) translateY(1px);
     }
   }
-}
-
-.container {
-}
-
-.swiper-container {
-}
-
-.swiper-wrapper {
-}
-
-.swiper-slide {
 }
